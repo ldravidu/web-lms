@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ldravidu.web_lms_backend.entity.CourseContent;
 import com.ldravidu.web_lms_backend.service.FileUploadService;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/api/content")
@@ -31,4 +32,10 @@ public class CourseContentController {
             throw new RuntimeException("Failed to upload file", e);
         }
     }
+
+    @GetMapping("/")
+    public String getContent() {
+        return "Content";
+    }
+
 }
